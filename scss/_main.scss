@@ -49,4 +49,17 @@
       }
     }
   }
+
+  &__btns {
+    list-style: none;
+    @include row();
+    gap: space();
+    margin: space(4) 0;
+    padding: 0;
+  }
+
+  canvas {
+    width: calc(100% + 8px); // 728px
+    margin: 0 -4px;
+  }
 }

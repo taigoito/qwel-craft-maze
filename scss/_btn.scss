@@ -1,0 +1,18 @@
+/**
+ * Btn
+ */
+
+.btn {
+  @include makeBlock(9rem);
+  @include makeButton();
+
+  @each $key, $color in $themeColors {
+    &--#{$key} {
+      background-color: $color;
+
+      &, &:active, &:hover, &:focus {
+        color: colorYiq($color);
+      }
+    }
+  }
+}

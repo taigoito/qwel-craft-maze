@@ -3,12 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Title Here] | QWEL in Action</title>
+    <title>Maze Generation | QWEL in Action</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Noto+Sans:wght@100..900&family=Noto+Serif:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico">
+    <style>
+      @media print {
+        #logo {
+          width: 3.6rem;
+        }
+        .breadcrumb,
+        .main__title, .main__list,
+        .main__btns, .btn, .footer {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -16,17 +27,22 @@
       <ul class="breadcrumb">
         <li class="breadcrumb__item"><a href="https://qwel.design/">QWEL in Action</a></li>
         <li class="breadcrumb__item"><a href="../">Creative Crafts</a></li>
-        <li class="breadcrumb__item breadcrumb__item--current"><span>[Title Here]</span></li>
+        <li class="breadcrumb__item breadcrumb__item--current"><span>Maze Generation</span></li>
       </ul>
     </header>
     <main class="main">
-      <h2 class="main__title">[Title Here] | Created by <span> ― QWEL.DESIGN</span></h2>
+      <h2 class="main__title">Maze Generation | Created by <span> ― QWEL.DESIGN</span></h2>
       <ul class="main__list">
-        <li class="main__listItem--spec">[Spec Here]</li>
+        <li class="main__listItem--spec">階層的な棒倒し法アルゴリズムによる迷路ジェネレーター</li>  
+        <li class="main__listItem--spec">迷路と巨大な数字にハマっている6才未満の子供に対し「オジサンね、迷路を無量大数個も作ったんだよ！」と言って驚かせるのが鉄板ネタ</li>
       </ul>
-      
-
-
+      <ul class="main__btns">
+        <li><button class="btn btn--primary" type="button" data-level="2">Level 1</button></li>
+        <li><button class="btn btn--primaryLight" type="button" data-level="3">Level 2</button></li>
+        <li><button class="btn btn--secondary" type="button" data-level="4">Level 3</button></li>
+        <li><button class="btn btn--tertiary" type="button" data-level="5">Level 4</button></li>
+      </ul>
+      <canvas id="maze" width="728" height="968"></canvas>
     </main>
     <footer id="footer" class="footer">
       <div class="footer__inner">
@@ -42,5 +58,6 @@
       </div>
     </footer>
     <script src="./init.js"></script>
+    <script src="./maze.js"></script>
   </body>
 </html>
